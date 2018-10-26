@@ -5,10 +5,9 @@ RSpec.describe Gotcha do
 
   describe 'capsule' do
 
-    it "景品を吐き出したら終了" do
-      #TODO
+    it "景品が無限に出てくるガチャ" do
       list = ['いちご', 'ぶどう']
-      expect(Gotcha::Capsule.limited list).to eq('いちご')
+      expect(list.include? Gotcha::Capsule.infinite(list)).to eq(true)
     end
 
   end

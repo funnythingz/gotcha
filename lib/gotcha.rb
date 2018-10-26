@@ -2,9 +2,8 @@ require "gotcha/version"
 
 module Gotcha
   class Capsule
-    def self.limited list
-      #TODO: 景品を吐き出したら終了するガチャ
-      list.first
+    def self.infinite list
+      list.sample
     end
   end
 end

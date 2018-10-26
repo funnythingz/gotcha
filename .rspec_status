@@ -1,0 +1,4 @@
+example_id                   | status | run_time        |
+---------------------------- | ------ | --------------- |
+./spec/gotcha_spec.rb[1:1]   | passed | 0.00066 seconds |
+./spec/gotcha_spec.rb[1:2:1] | passed | 0.00047 seconds |

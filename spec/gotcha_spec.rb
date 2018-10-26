@@ -3,7 +3,13 @@ RSpec.describe Gotcha do
     expect(Gotcha::VERSION).not_to be nil
   end
 
-  it "does something useful" do
-    expect(false).to eq(true)
+  describe 'capsule' do
+
+    it "景品を吐き出したら終了" do
+      #TODO
+      list = ['いちご', 'ぶどう']
+      expect(Gotcha::Capsule.limited list).to eq('いちご')
+    end
+
   end
 end

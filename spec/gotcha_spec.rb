@@ -6,8 +6,16 @@ RSpec.describe Gotcha do
   describe 'capsule' do
 
     it "景品が無限に出てくるガチャ" do
-      list = ['いちご', 'ぶどう']
-      expect(list.include? Gotcha::Capsule.infinite(list)).to eq(true)
+      g = Gotcha::InfiniteCapsule.new ['いちご', 'ぶどう', 'なし']
+      expect(g.list.include? g.run).to eq(true)
+    end
+
+    it "出た景品が減っていくガチャ" do
+      g = Gotcha::LimitedCapsule.new ['いちご', 'ぶどう', 'なし']
+      (0..g.list.size - 1).each do |item|
+        g.run
+      end
+      expect(g.list.size).to eq(0)
     end
 
   end
